@@ -3,7 +3,17 @@
 
 string[] FilterStringsByLength(string[] inputArray)
 {
+    int count = 0;
+    for (int i = 0; i < inputArray.Length; i++)
+    {
+        if (inputArray[i].Length <= 3)
+        {
+            count++;
+        }
+    }
+
     string[] resultArray = new string[count];
+    
     int index = 0;
     for (int i = 0; i < inputArray.Length; i++)
     {
@@ -21,6 +31,7 @@ Console.WriteLine("Введите строку массива:");
 string input = Console.ReadLine();
 string[] inputArray = input.Split(' ');
 string[] resultArray = FilterStringsByLength(inputArray);
+
 Console.WriteLine("Новый массив из строк, длина которых меньше, либо равна 3 символам:");
 Console.Write("[");
 for (int i = 0; i < resultArray.Length; i++)
